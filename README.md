@@ -253,10 +253,38 @@ npm run build
 
 # Development mode
 npm run dev
-
-# Deploy to CDN
-npm run deploy
 ```
+
+---
+
+## 🏷️ **Versioning and Deployment**
+
+This project uses Git tags for versioning, which are automatically picked up by jsDelivr. To release a new version:
+
+1.  **Commit your changes**: Make sure all your latest changes are committed to the `main` branch.
+    ```bash
+    git commit -am "feat: Add new feature"
+    git push origin main
+    ```
+
+2.  **Create a new tag**: Use semantic versioning (e.g., `v1.0.1`, `v1.1.0`).
+    ```bash
+    git tag v1.0.1 -m "Release v1.0.1"
+    ```
+
+3.  **Push the tag to GitHub**:
+    ```bash
+    git push --tags
+    ```
+
+4.  **Update your CDN link**: jsDelivr will now serve the new version. Simply update the version number in your script tag.
+    ```html
+    <!-- From: -->
+    <script src="https://cdn.jsdelivr.net/gh/javron/contra-webflow@v1.0.0/dist/runtime.min.js"></script>
+
+    <!-- To: -->
+    <script src="https://cdn.jsdelivr.net/gh/javron/contra-webflow@v1.0.1/dist/runtime.min.js"></script>
+    ```
 
 ---
 
